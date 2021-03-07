@@ -1,0 +1,36 @@
+version: '3.4'
+
+networks:
+  public:
+    external: true
+
+configs:
+  traefik_yml: 
+    file: traefik.yml
+
+secrets:
+  acme_json:
+    file: acme.json
+
+services:
+  traefik:
+    image: traefik:v2.4
+    ports:
+      - "8080:8080"
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    configs:
+      - source: traefik_yml
+        target: /etc/traefik/traefik.yml
+    secrets:
+      - source: acme_json
+        target: /acme.json
+    networks:
+      public:
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
+

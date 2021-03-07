@@ -1,0 +1,33 @@
+@startuml
+!include style.puml
+rectangle  {
+    node swaymanager
+    database mariadb
+
+    folder infrastructure {
+        folder example {
+            file stack.yml
+            file example.cfg
+        }
+        folder _traefik
+        folder lists
+        folder home
+        folder docs
+        folder wiki
+        folder minio
+
+    }
+
+    infrastructure -- swaymanager
+    mariadb -- swaymanager
+
+}
+node swayworker1
+node swayworker2
+
+swaymanager -- swayworker1
+swaymanager -- swayworker2
+
+
+
+@enduml
