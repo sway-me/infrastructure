@@ -4,10 +4,6 @@ networks:
   public:
     external: true
 
-configs:
-  traefik_yml: 
-    file: traefik.yml
-
 secrets:
   acme_json:
     file: acme.json
@@ -15,22 +11,36 @@ secrets:
 services:
   traefik:
     image: traefik:v2.4
-    ports:
-      - "8080:8080"
-      - "80:80"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    configs:
-      - source: traefik_yml
-        target: /etc/traefik/traefik.yml
-    secrets:
-      - source: acme_json
-        target: /acme.json
     networks:
       public:
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    command:
+      - --api.insecure=true
+      - --providers.docker
+      - --providers.docker.network=public
+      - --providers.docker.swarmmode
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.le.acme.email=$EMAIL
+      - --certificatesresolvers.le.acme.dnschallenge.provider=namecheap
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+#      - --certificatesresolvers.le.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
+#      - --log.level=DEBUG
+    environment:
+      NAMECHEAP_API_USER: $NAMECHEAP_API_USER
+      NAMECHEAP_API_KEY: $NAMECHEAP_API_KEY
     deploy:
       placement:
         constraints:
           - node.role == manager
-
-
+      labels:
+        - traefik.enable=false
+    secrets:
+      - source: acme_json
+        target: /etc/traefik/acme.json

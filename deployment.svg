@@ -7,7 +7,8 @@ entity _traefik--><polygon points="587,230,679,230,693,272,767,272,767,343.1997,
 entity lists--><polygon points="837,230,929,230,943,272,973,272,973,343.1997,837,343.1997,837,230" style="stroke:#708090;stroke-width:3.0;fill:none;"/><line style="stroke:#708090;stroke-width:3.0;fill:none;" x1="837" x2="943" y1="272" y2="272"/><text fill="#708090" font-family="Exo 2" font-size="28" lengthAdjust="spacing" textLength="52" x="857" y="313.9719">lists</text><!--MD5=[75b734d1db3ce9d09c7f82392295d704]
 entity home--><polygon points="1043,230,1135,230,1149,272,1199,272,1199,343.1997,1043,343.1997,1043,230" style="stroke:#708090;stroke-width:3.0;fill:none;"/><line style="stroke:#708090;stroke-width:3.0;fill:none;" x1="1043" x2="1149" y1="272" y2="272"/><text fill="#708090" font-family="Exo 2" font-size="28" lengthAdjust="spacing" textLength="72" x="1063" y="313.9719">home</text><!--MD5=[57a5b41ed6b3ba96fe9b4a740eb3fdc7]
 entity docs--><polygon points="605,464,697,464,711,506,749,506,749,577.1997,605,577.1997,605,464" style="stroke:#708090;stroke-width:3.0;fill:none;"/><line style="stroke:#708090;stroke-width:3.0;fill:none;" x1="605" x2="711" y1="506" y2="506"/><text fill="#708090" font-family="Exo 2" font-size="28" lengthAdjust="spacing" textLength="60" x="625" y="547.9719">docs</text><!--MD5=[60e40abdec2fcbb77c415fabbc881ea5]
-entity wiki--><polygon points="820,464,912,464,926,506,954,506,954,577.1997,820,577.1997,820,464" style="stroke:#708090;stroke-width:3.0;fill:none;"/><line style="stroke:#708090;stroke-width:3.0;fill:none;" x1="820" x2="926" y1="506" y2="506"/><text fill="#708090" font-family="Exo 2" font-size="28" lengthAdjust="spacing" textLength="50" x="840" y="547.9719">wiki</text><!--MD5=[b58bf695bc378620cff659d464060a87]
+entity wiki--><polygon points="820,464,912,464,926,506,954,506,954,577.1997,820,577.1997,820,464" style="stroke:#708090;stroke-width:3.0;fill:none;"/><line style="stroke:#708090;stroke-width:3.0;fill:none;" x1="820" x2="926" y1="506" y2="506"/><text fill="#708090" font-family="Exo 2" font-size="28" lengthAdjust="spacing" textLength="50" x="840" y="547.9719">wiki</text><!--MD5=[dd69d516781b0f0936e849bb07507e10]
+entity minio--><polygon points="1025,464,1117,464,1131,506,1177,506,1177,577.1997,1025,577.1997,1025,464" style="stroke:#708090;stroke-width:3.0;fill:none;"/><line style="stroke:#708090;stroke-width:3.0;fill:none;" x1="1025" x2="1131" y1="506" y2="506"/><text fill="#708090" font-family="Exo 2" font-size="28" lengthAdjust="spacing" textLength="68" x="1045" y="547.9719">minio</text><!--MD5=[b58bf695bc378620cff659d464060a87]
 entity stack.yml--><polygon points="1535,250,1535,323.5999,1695,323.5999,1695,270,1675,250,1535,250" style="stroke:#708090;stroke-width:3.0;fill:none;"/><path d="M1675,250 L1675,270 L1695,270 " style="stroke:#708090;stroke-width:3.0;fill:none;"/><text fill="#708090" font-family="Exo 2" font-size="28" lengthAdjust="spacing" textLength="120" x="1555" y="297.9719">stack.yml</text><!--MD5=[808032679d84cd872dc6b31fcd862d50]
 entity example.cfg--><polygon points="1269,250,1269,323.5999,1465,323.5999,1465,270,1445,250,1269,250" style="stroke:#708090;stroke-width:3.0;fill:none;"/><path d="M1445,250 L1445,270 L1465,270 " style="stroke:#708090;stroke-width:3.0;fill:none;"/><text fill="#708090" font-family="Exo 2" font-size="28" lengthAdjust="spacing" textLength="156" x="1289" y="297.9719">example.cfg</text><!--MD5=[a1bd5a90179d42d923c30ac7d398b0b5]
 entity swayworker1--><polygon points="32,742,52,722,286,722,286,795.5999,266,815.5999,32,815.5999,32,742" style="stroke:#708090;stroke-width:3.0;fill:none;"/><line style="stroke:#708090;stroke-width:3.0;fill:none;" x1="266" x2="286" y1="742" y2="722"/><line style="stroke:#708090;stroke-width:3.0;fill:none;" x1="32" x2="266" y1="742" y2="742"/><line style="stroke:#708090;stroke-width:3.0;fill:none;" x1="266" x2="266" y1="742" y2="815.5999"/><text fill="#708090" font-family="Exo 2" font-size="28" lengthAdjust="spacing" textLength="174" x="62" y="789.9719">swayworker1</text><!--MD5=[71cadac897eebd081bc794560b3aaf07]
@@ -19,7 +20,8 @@ link swaymanager to swayworker2--><path d="M351.46,568.32 C380.92,612.14 425.3,6
 link _traefik to lists--><!--MD5=[b8583bfa4f602dc8baa5fb052a67fb78]
 link lists to home--><!--MD5=[6bbad38f660c1fd9fdf079ffb620e935]
 link _traefik to docs--><!--MD5=[c3f667e2f3582399efcee5dc440a32b3]
-link docs to wiki--><!--MD5=[0c758992a5780f063a054327d1199c73]
+link docs to wiki--><!--MD5=[f1babd955d507fa13a1350d2572e2511]
+link wiki to minio--><!--MD5=[7d50d40a82c67657d5e331cf8a6c13fc]
 @startuml
 !include style.puml
 rectangle  {
@@ -36,6 +38,7 @@ rectangle  {
         folder home
         folder docs
         folder wiki
+        folder minio
 
     }
 
@@ -195,6 +198,7 @@ rectangle  {
         folder home
         folder docs
         folder wiki
+        folder minio
 
     }
 
