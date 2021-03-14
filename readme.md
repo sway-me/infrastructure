@@ -4,6 +4,9 @@
 
 ## Prereqs
 
+### Configure namecheap
+- Add wildcard to the main ip
+
 ### Configure NFS
 
 1. turn on `sudo systemctl enable systemd-networkd-wait-online.service`
@@ -18,5 +21,10 @@ bind-address	= 0.0.0.0:
 ```
 
 
-### Manifesto
+### Practices
 - prefer docker commands over config files
+
+### Release Schedule
+
+1.  on thursday 10am automaatically pause all merge request to preview branch
+1.  then automatically run all load and e2e tests
