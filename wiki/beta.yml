@@ -6,7 +6,7 @@ networks:
 
 services:
   wiki:
-    image: sway/wiki
+    image: swayme/wiki
     environment:
       DB_SERVER: mariadb
       DB_USER: $DB_USER
