@@ -6,7 +6,8 @@ rectangle  {
 
     folder infrastructure {
         folder example {
-            file stack.yml
+            file prod.yml
+            file beta.yml
             file example.cfg
         }
         folder _traefik

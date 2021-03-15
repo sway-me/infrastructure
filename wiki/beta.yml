@@ -5,7 +5,12 @@ networks:
 
 services:
   wiki:
-    image: iotresister/test
+    image: sway/wiki
+    environment:
+      DB_SERVER: mariadb
+      DB_USER: $DB_USER
+      DB_PASSWORD: $DB_PASSWORD
+      DB_NAME: $WIKI_DB
     networks:
       - public
     deploy:
