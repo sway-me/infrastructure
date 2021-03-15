@@ -1,5 +1,5 @@
 @startuml
-!include style.puml
+!include https://minio.swayme.xyz/shared/style.puml
 rectangle  {
     node swaymanager
     database mariadb
@@ -18,6 +18,7 @@ rectangle  {
         folder minio
 
     }
+
 
     infrastructure -- swaymanager
     mariadb -- swaymanager
