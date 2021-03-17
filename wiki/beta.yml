@@ -16,9 +16,9 @@ services:
     volumes:
       - ./LocalSettings_beta.php:/var/www/html/LocalSettings.php
     deploy:
-#      placement:
-#        constraints:
-#          - node.role == manager
+      placement:
+        constraints:
+          - node.role == manager
       labels:
         - traefik.http.routers.wiki.rule=Host(`wiki.beta.swayme.xyz`)
         - traefik.http.routers.wiki.entrypoints=websecure
