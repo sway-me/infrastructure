@@ -9,11 +9,11 @@ services:
     image: minio/minio:RELEASE.2021-03-12T00-00-47Z
     command: server /data
     environment:
-      MINIO_ACCESS_KEY: $MINIO_ACCESS_KEY
+      MINIO_ACCESS_KEY: $USERNAME
       MINIO_SECRET_KEY: $MINIO_SECRET_KEY
     deploy:
       labels:
-        - traefik.http.routers.minio.rule=Host(`minio.$DOMAIN`)
+        - traefik.http.routers.minio.rule=Host(`minio.swayme.xyz`)
         - traefik.http.services.minio.loadbalancer.server.port=9000
         - traefik.http.routers.minio.entrypoints=websecure
         - traefik.http.routers.minio.tls.certresolver=le

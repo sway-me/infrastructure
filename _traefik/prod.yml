@@ -24,14 +24,14 @@ services:
       - --providers.docker.swarmmode
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
-      - --certificatesresolvers.le.acme.email=$EMAIL
+      - --certificatesresolvers.le.acme.email=info@swayme.xyz
       - --certificatesresolvers.le.acme.dnschallenge.provider=namecheap
       - --entrypoints.web.http.redirections.entrypoint.to=websecure
       - --entrypoints.web.http.redirections.entrypoint.scheme=https
 #      - --certificatesresolvers.le.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
 #      - --log.level=DEBUG
     environment:
-      NAMECHEAP_API_USER: $NAMECHEAP_API_USER
+      NAMECHEAP_API_USER: $USERNAME
       NAMECHEAP_API_KEY: $NAMECHEAP_API_KEY
     deploy:
       placement:
