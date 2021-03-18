@@ -13,8 +13,6 @@ services:
       DB_NAME: beta_wiki
       FQ_URL: 'https://wiki.beta.swayme.xyz'
       DEBUG: 'true'
-#    volumes:
-#      - ./LocalSettings_beta.php:/var/www/html/LocalSettings.php
     deploy:
       placement:
         constraints:
