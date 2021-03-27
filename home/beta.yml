@@ -1,0 +1,19 @@
+version: '3.4'
+networks:
+  public:
+    external: true
+
+services:
+  home:
+    image: swayme/home
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        - traefik.http.routers.home.rule=Host(`beta.swayme.xyz`)
+        - traefik.http.routers.home.entrypoints=websecure
+        - traefik.http.routers.home.tls.certresolver=le
+        - traefik.http.services.home.loadbalancer.server.port=80
+    networks:
+      - public
